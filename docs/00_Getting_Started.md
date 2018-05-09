@@ -1,40 +1,40 @@
-**Daux.io** is an documentation generator that uses a simple folder structure and Markdown files to create custom documentation on the fly. It helps you create great looking documentation in a developer friendly way.
+**Daux.io** 是一个文档生成器，它使用简单的文件夹结构和Markdown文件即时创建自定义文档。 它可以帮助您以开发人员友好的方式创建精美的文档。
 
 [TOC]
 
-## Features
+## 功能列表
 
-### For Authors
+### 对文档作者来说
 
-* [Auto Generated Navigation / Page sorting](01_Features/Navigation_and_Sorting.md)
-* [Internal documentation links](01_Features/Internal_links.md)
-* [CommonMark compliant](01_Features/CommonMark_compliant.md)
-* [Auto created homepage/landing page](01_Features/Landing_page.md)
-* [Multiple Output Formats](01_Features/Multiple_Output_Formats.md)
-* [Multiple Languages Support](01_Features/Multilanguage.md)
-* [No Build Step](01_Features/Live_mode.md)
-* [Static Output Generation](01_Features/Static_Site_Generation.md)
-* [Table of Contents](01_Features/Table_of_contents.md)
+* [导航自动生成/页面排序](01_Features/Navigation_and_Sorting.md)
+* [内部文档关联](01_Features/Internal_links.md)
+* [兼容CommonMark](01_Features/CommonMark_compliant.md)
+* [自动生成首页/Landing页面](01_Features/Landing_page.md)
+* [多种输出格式](01_Features/Multiple_Output_Formats.md)
+* [多语言支持](01_Features/Multilanguage.md)
+* [无需编译步骤](01_Features/Live_mode.md)
+* [静态网站生成支持](01_Features/Static_Site_Generation.md)
+* [内容目录支持](01_Features/Table_of_contents.md)
 
-### For Developers
+### 对开发人员来说
 
-* [Auto Syntax Highlighting](01_Features/Auto_Syntax_Highlight.md)
-* [Extend Daux.io with Processors](01_For_Developers/Creating_a_Processor.md)
-* Full access to the internal API to create new pages programatically
-* Work with pages metadata
+* [自动语法高亮](01_Features/Auto_Syntax_Highlight.md)
+* [扩展Daux.io的处理器](01_For_Developers/Creating_a_Processor.md)
+* 完全访问内部API以编程方式创建新页面
+* 使用页面元数据
 
-### For Marketing
+### 对市场人员来说
 
-* 100% Mobile Responsive
-* 4 Built-In Themes or roll your own
-* Functional, Flat Design Style
-* Optional code float layout
-* Shareable/Linkable SEO Friendly URLs
-* Supports Google Analytics and Piwik Analytics
+* 100％移动响应
+* 4个内置主题或自定义
+* 功能性，平面设计风格
+* 可选代码浮动布局
+* 可共享/可链接的搜索引擎友好网址
+* 支持Google Analytics和Piwik Analytics
 
-## Demos
+## 演示站点
 
-This is a list of sites using Daux.io:
+这是使用Daux.io的网站列表:
 
 * [Daux.io](https://dauxio.github.io/)
 * [DoctrineWatcher](https://dsentker.github.io/WatcherDocumentation/)
@@ -44,15 +44,15 @@ This is a list of sites using Daux.io:
 * [Munee: Standalone PHP 5.3 Asset Optimisation & Manipulation](http://mun.ee)
 * [ICADMIN: An admin panel powered by CodeIgniter.](http://istocode.com/shared/ic-admin/)
 
-Do you use Daux.io? Send us a pull request or open an [issue](https://github.com/dauxio/daux.io/issues) and I will add you to the list.
+你使用Daux.io吗？ 向我们发送拉取请求或打开[问题](https://github.com/dauxio/daux.io/issues)，我会将您添加到列表中。
 
-## Getting Started
+## 入门
 
-### Install
+### 安装
 
-#### PHP and Composer
+#### PHP 和 Composer
 
-If you have PHP and Composer installed, you can install the dependency
+如果您安装了PHP和Composer，则可以安装依赖项
 
 ```bash
 composer global require daux/daux.io
@@ -61,99 +61,98 @@ composer global require daux/daux.io
 daux generate
 ```
 
-You can then use the `daux` command line to generate your documentation.
+然后您可以使用`daux`命令行生成文档。
 
-If the command isn't found, ensure your `$PATH` contains `~/.composer/vendor/bin`
+如果找不到命令，请确保您的`$PATH`包含`〜/.composer / vendor / bin`
 
 #### Docker
-
-Or if you wish to use Docker, the start of the command will be :
+或者如果你想使用Docker，命令的开始将是：
 
 ```bash
 docker run --rm -it -w /build -v "$PWD":/build daux/daux.io daux
 ```
 
-Any parameter valid in the PHP version is valid in the Docker version
+在PHP版本中有效的任何参数在Docker版本中均有效
 
 
-### Writing pages
+### 编写页面
 
-Creating new pages is very easy:
-1. Create a markdown file (`*.md` or `*.markdown`)
-2. Start writing
+创建新页面非常简单：
+1.创建一个Markdown文件（`*.md`或`*.markdown`）
+2.开始写作
 
-By default, the generator will look for folders in the `docs` folder.
-Add your folders inside the `docs` folder. This project contains some example folders and files to get you started.
+默认情况下，生成器将在`docs`文件夹中查找文件夹。
+将文件夹添加到`docs`文件夹中。 该项目包含一些示例文件夹和文件，以帮助您入门。
 
-You can nest folders any number of levels to get the exact structure you want.
-The folder structure will be converted to the nested navigation.
+您可以将文件夹嵌套到任意数量的级别以获得所需的确切结构。
+文件夹结构将被转换为嵌套导航。
 
-You must use underscores instead of spaces. Here are some example file names and what they will be converted to:
+您必须使用下划线而不是空格。 以下是一些示例文件名称以及它们将被转换为的内容：
 
-**Good:**
+**良好的示例:**
 
 * 01_Getting_Started.md = Getting Started
 * API_Calls.md = API Calls
 * 200_Something_Else-Cool.md = Something Else-Cool
 * _5_Ways_to_Be_Happy.md = 5 Ways To Be Happy
 
-**Bad:**
+**错误的示例:**
 
 * File Name With Space.md = FAIL
 
-### See your pages
+### 查看你的网页
 
-Now you can see your pages. you have two options for that : serve them directly, or generate to various formats.
+现在你可以看到你的页面。 你有两个选择：直接提供服务，或者生成各种格式。
 
-We recommend the first one while you write your documentation, you get a much quicker feedback while writing.
+我们在撰写文档时建议您使用第一种，在写作时您会得到更快的反馈。
 
-#### Serving files
+#### 文件服务
 
-You can use PHP's embedded web server by running the following command in the root of your documentation
+通过在文档的根目录下运行以下命令，可以使用PHP的嵌入式Web服务器
 
 ```
 ./serve
 ```
 
-Upload your files to an apache / nginx server and see your documentation
+将您的文件上传到apache/nginx服务器并查看您的文档
 
-[More informations here](01_Features/Live_mode.md)
+[更多信息在这里](01_Features/Live_mode.md)
 
-#### Export to other formats
+#### 导出为其他格式
 
-Daux.io is extendable and comes by default with three export formats:
+Daux.io是可扩展的，默认情况下有三种导出格式：
 
-- Export to HTML, same as the website, but can be hosted without PHP.
-- Export all documentation in a single HTML page
-- Upload to your Atlassian Confluence server.
+- 导出为HTML，与网站相同，但可以不使用PHP进行托管。
+- 在单个HTML页面中导出所有文档
+- 上传到您的Atlassian Confluence服务器。
 
-[See a detailed feature comparison matrix](01_Features/Multiple_Output_Formats.md)
+[查看详细的功能比较矩阵](01_Features/Multiple_Output_Formats.md)
 
-To export, run the `daux` command and your documentation will be generated in `static` (you can change the destination with the `--destination` option)
+要输出，运行`daux`命令，你的文档将以`static`生成（你可以用`--destination`选项改变目的地）
 
-[See here for all options](01_Features/Static_Site_Generation.md)
+[在这里查看所有选项](01_Features/Static_Site_Generation.md)
 
-## Configuration
+## 配置信息
 
-Now that you got the basics, you can also [see what you can configure](05_Configuration/_index.md)
+现在你已经掌握了基本知识，你也可以[看看你可以配置什么](05_Configuration/_index.md)
 
-## PHP Requirements
+## PHP要求
 
-Daux.io is compatible with PHP 5.6 and up.
+Daux.io与PHP 5.6及更高版本兼容。
 
-The reason is because some dependencies we have do not support php 5.5 anymore.
+原因是因为我们有一些依赖关系不再支持php 5.5。
 
-### Extensions
+### 扩展
 
-PHP Needs the following extension to work : `php-mbstring` and `php-xml`.
+PHP需要以下扩展名：`php-mbstring`和`php-xml`。
 
-If you encounter an error similar to `utf8_decode() not found` this means that you're missing the `php-xml` package. (We've seen it happen only on PHP 7)
+如果您遇到类似`utf8_decode（）not found`的错误，这意味着您错过了`php-xml`软件包。 （我们已经看到它只发生在PHP 7上）
 
-## Known Issues
+## 已知的问题
 
-- __Windows UTF-8 files support__ Files with UTF-8 characters cannot be handled on windows with PHP5, PHP7 should work fine.
+- __Windows UTF-8 files support__ 具有UTF-8字符的文件无法在Windows 系统上使用PHP5中处理，PHP7应该可以正常工作。.
 
 
-## Support
+## 支持
 
-If you need help using Daux.io, or have found a bug, please create an issue on the <a href="https://github.com/dauxio/daux.io/issues" target="_blank">GitHub repo</a>.
+如果您需要使用Daux.io的帮助，或发现了错误，请在<a href="https://github.com/dauxio/daux.io/issues" target="_blank"> GitHub repo上创建问题</A>。

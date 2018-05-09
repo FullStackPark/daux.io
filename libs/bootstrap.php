@@ -2,9 +2,9 @@
 
 function loadApp() {
     // Loaded as a dependency
-    if (file_exists(__DIR__ . '/../../../autoload.php')) {
-        return require_once __DIR__ . '/../../../autoload.php';
-    }
+    //if (file_exists(__DIR__ . '/../../../autoload.php')) {
+    //    return require_once __DIR__ . '/../../../autoload.php';
+    //}
 
     // Loaded in the project itself
     if (file_exists(__DIR__ . '/../vendor/autoload.php')) {

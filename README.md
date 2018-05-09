@@ -9,36 +9,36 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/daux/daux.io.svg?style=flat-square)](https://packagist.org/packages/daux/daux.io)
 
 
-**Daux.io** is a documentation generator that uses a simple folder structure and Markdown files to create custom documentation on the fly. It helps you create great looking documentation in a developer friendly way.
+**Daux.io** 是一个文档生成器，它使用简单的文件夹结构和Markdown文件即时创建自定义文档。 它可以帮助您以开发人员友好的方式创建精美的文档。
 
-## Features
+## 功能列表
 
-* 100% Mobile Responsive
-* CommonMark compliant (a Markdown specification)
-* Supports Markdown tables
-* Auto created homepage/landing page
-* Auto Syntax Highlighting
-* Auto Generated Navigation
-* 4 Built-In Themes or roll your own
-* Functional, Flat Design Style
-* Shareable/Linkable SEO Friendly URLs
-* Built On Bootstrap
-* No Build Step
-* Git/SVN Friendly
-* Supports Google Analytics and Piwik Analytics
-* Optional code float layout
-* Static Output Generation
+* 100％移动响应
+* 兼容CommonMark ( Markdown 标准)
+* 支持Markdown表格
+* 自动生成首页/Landing页面
+* 自动语法高亮
+* 导航自动生成/页面排序
+* 4个内置主题或自定义
+* 功能性，平面设计风格
+* 可共享/可链接的搜索引擎友好网址
+* 建立在Bootstrap上
+* 无需编译步骤
+* Git / SVN友好
+* 支持Google Analytics和Piwik Analytics
+* 可选代码浮动布局
+* 静态网站生成支持
 
-## Demos
+## 演示站点
 
-This is a list of sites using Daux.io:
+这是使用Daux.io的网站列表:
 
-- With a custom theme:
+- 使用定制主题:
     * [Pixolution flow](https://docs.pixolution.org)
 	* [Crafty](https://swissquote.github.io/crafty)
     * [Vulkan Tutorial](https://vulkan-tutorial.com)
     * [TrackJs](http://docs.trackjs.com)
-- With the default Theme
+- 使用默认主题
     * [Daux.io](https://daux.io/)
     * [Gltn - An open-source word processor webapp](http://felkerdigitalmedia.com/gltn/docs/)
     * [Invade & Annex 3 - An Arma 3 Co-operative Mission](http://ia3.ahoyworld.co.uk/)
@@ -47,13 +47,13 @@ This is a list of sites using Daux.io:
     * [Cumulus TV: Android TV app that turns any stream/page into a Live Channel](http://cumulustv.herokuapp.com)
     * [Nuntius: A PHP framework for bots](https://roysegall.github.io/nuntius-bot/)
 
-Do you use Daux.io? Send me a pull request or open an [issue](https://github.com/dauxio/daux.io/issues) and I will add you to the list.
+你使用Daux.io吗？ 向我们发送拉取请求或打开[问题](https://github.com/dauxio/daux.io/issues)，我会将您添加到列表中。
 
-## Install
+## 安装
 
-### PHP and Composer
+### PHP 和 Composer
 
-If you have PHP and Composer installed, you can install the dependency
+如果您安装了PHP和Composer，则可以安装依赖项
 
 ```bash
 composer global require daux/daux.io
@@ -62,60 +62,61 @@ composer global require daux/daux.io
 daux generate
 ```
 
-You can then use the `daux` command line to generate your documentation.
+然后您可以使用`daux`命令行生成文档。
 
-If the command isn't found, ensure your `$PATH` contains `~/.composer/vendor/bin`
+如果找不到命令，请确保您的`$PATH`包含`〜/.composer/vendor/bin`
 
 ### Docker
-
-Or if you wish to use Docker, the start of the command will be :
+或者如果你想使用Docker，命令的开始将是：
 
 ```bash
 docker run --rm -it -w /build -v "$PWD":/build daux/daux.io daux
 ```
 
-## Run on a server
+在PHP版本中有效的任何参数在Docker版本中均有效
 
-Download this repository as a zip, unpack, and put your documentation in the `docs` folder, you can then serve it with Apache or Nginx.
+## 在服务器上运行
+   
+下载这个版本库作为一个zip文件，解压并将你的文档放在`docs`文件夹中，然后你可以使用Apache或Nginx。
 
 ## `daux`
+   
+命令行工具有两个命令：`generate`和`serve`，不带参数运行Daux.io会自动运行`generate`命令。
 
-The command line tool has two commands: `generate` and `serve`, running Daux.io without an argument will automatically run the `generate` command.
+你可以运行`daux --help`来获得每个命令的更多细节。
 
-You can run `daux --help` to get more details about each command.
+## 文件夹
 
-## Folders
+默认情况下，生成器将在`docs`文件夹中查找文件夹。 将文件夹添加到`docs`文件夹中。 该项目包含一些示例文件夹和文件，以帮助您入门。
 
-By default, the generator will look for folders in the `docs` folder. Add your folders inside the `docs` folder. This project contains some example folders and files to get you started.
+您可以将文件夹嵌套到任意数量的级别以获得所需的确切结构。 文件夹结构将被转换为嵌套导航。
 
-You can nest folders any number of levels to get the exact structure you want. The folder structure will be converted to the nested navigation.
+如果您希望将文档保存在其他位置（如daux.io根目录之外），则可以在`global.json`文件中指定文档路径。
 
-If you'd prefer to keep your docs somewhere else (like outside of the daux.io root directory) you can specify your docs path in the `global.json` file.
+## 文件
+   
+生成器将在`docs`文件夹和`docs`内的任何子文件夹内寻找Markdown文件（`* .md`和`* .markdown`）。
 
-## Files
+您必须使用下划线而不是空格。 以下是一些示例文件名称以及它们将被转换为的内容：
 
-The generator will look for Markdown files (`*.md` and `*.markdown`) inside the `docs` folder and any of the subfolders within `docs`.
-
-You must use underscores instead of spaces. Here are some example file names and what they will be converted to:
-
-**Good:**
+**良好的示例:**
 
 * 01_Getting_Started.md = Getting Started
 * API_Calls.md = API Calls
 * 200_Something_Else-Cool.md = Something Else-Cool
 * _5_Ways_to_Be_Happy.md = 5 Ways To Be Happy
 
-**Bad:**
+**错误的示例:**
 
 * File Name With Space.md = FAIL
 
-## Sorting
+## 排序
+   
+要以特定方式对文件和文件夹进行排序，您可以用数字和下划线作为前缀，例如， `/docs/01_Hello_World.md` 和 `/docs/05_Features.md` 这将在 *Features* 之前列出 *Hello World*，覆盖默认的字母数字排序。 这些数字将被剥离出导航和网址。 对于文件 `6 Ways to Rich` ，你可以使用 `/docs/_6_Ways_to_Get_Rich.md`
 
-To sort your files and folders in a specific way, you can prefix them with a number and underscore, e.g. `/docs/01_Hello_World.md` and `/docs/05_Features.md` This will list *Hello World* before *Features*, overriding the default alpha-numeric sorting. The numbers will be stripped out of the navigation and urls. For the file `6 Ways to Get Rich`, you can use `/docs/_6_Ways_to_Get_Rich.md`
-
-## Landing page
-
-If you want to create a beautiful landing page for your project, simply create a `index.md` file in the root of the `/docs` folder. This file will then be used to create a landing page. You can also add a tagline and image to this page using the config file like this:
+## 登陆页面
+   
+如果你想为你的项目创建一个漂亮的目标页面，只需在`/docs`文件夹的根目录下创建一个`index.md`文件。 这个文件将被用来创建一个登陆页面。 您还可以使用像这样的配置文件将标语和图像添加到此页面：
 
 ```json
 {
@@ -125,19 +126,20 @@ If you want to create a beautiful landing page for your project, simply create a
 }
 ```
 
-Note: The image can be a local or remote image. Use the convention `<base_url>` to refer to the root directory of the Daux instance.
+注意：图像可以是本地或远程图像。 使用约定`<base_url>`来引用Daux实例的根目录。
 
-## Section landing page
+## 着陆页Section
+   
+如果您有兴趣为文档的某个子部分设置着陆页，则只需将“index.md”文件添加到该文件夹即可。 例如，`/docs/01_Examples`因为存在`/docs/01_Examples/index.md`文件而具有该部分的着陆页。 如果您希望为没有着陆页格式的部分设置索引页，请使用名称_index.md
 
-If you are interested in having a landing page for a subsection of your docs, all you need to do is add an `index.md` file to the folder. For example, `/docs/01_Examples` has a landing page for that section since there exists a `/docs/01_Examples/index.md` file. If you wish to have an index page for a section without a landing page format, use the name `_index.md`
+## 配置文件
 
-## Configuration
+要定制文档的外观，您可以在`/ docs`文件夹中创建一个`config.json`文件。
+`config.json`文件是一个简单的JSON对象，您可以使用它来更改文档的一些基本设置。
 
-To customize the look and feel of your documentation, you can create a `config.json` file in the of the `/docs` folder.
-The `config.json` file is a simple JSON object that you can use to change some of the basic settings of the documentation.
+### 标题
 
-### Title
-Change the title bar in the docs
+更改文档中的标题栏
 
 ```json
 {
@@ -145,8 +147,9 @@ Change the title bar in the docs
 }
 ```
 
-### Themes
-We have 4 built-in Bootstrap themes. To use one of the themes, just set the `theme` option to one of the following:
+### 主题
+
+我们有4个内置的Bootstrap主题。 要使用其中一个主题，只需将`theme`选项设置为以下之一：
 
 * daux-blue
 * daux-green
@@ -159,45 +162,47 @@ We have 4 built-in Bootstrap themes. To use one of the themes, just set the `the
 }
 ```
 
-### More options
-Many other options are available:
-- [Global options](http://daux.io/Configuration/index)
-- [HTML Options](http://daux.io/Configuration/Html_export)
-- [Confluence options](http://daux.io/Configuration/Confluence_upload)
+### 更多选项
 
-## Running Remotely
+许多其他选项可用:
 
-Copy the files from the repo to a web server that can run PHP 5.4 or greater.
+- [全局选项](http://daux.io/Configuration/index)
+- [HTML选项](http://daux.io/Configuration/Html_export)
+- [Confluence 选项](http://daux.io/Configuration/Confluence_upload)
 
-## Running Locally
+## 远程运行
 
-There are several ways to run the docs locally.
-The recommended way is to run `daux serve` which will execute PHP's embedded server. 
+将文件从repo复制到可运行PHP 5.4或更高版本的Web服务器。
 
-By default the server will run at: <a href="http://localhost:8085" target="_blank">http://localhost:8085</a>
+## 本地运行
 
-This is really only intended be used when you are writing/updating a ton of docs and want to preview the changes locally.
+有几种方法可以在本地运行文档。
+推荐的方法是运行`daux serve`，它将执行PHP的嵌入式服务器。
 
-## Generating a set of static files
+默认情况下，服务器将运行于：<a href="http://localhost:8085" target="_blank">http//localhost8085</a>
 
-These can be uploaded to a static site hosting service such as pages.github.com
+这实际上仅用于在编写/更新大量文档并希望在本地预览更改时使用。
 
-Generating a complete set of pages, with navigation
+## 生成一组静态文件
+   
+这些可以上传到静态网站托管服务，如pages.github.com
+
+使用导航生成一整套页面
 
 ```bash
 daux --source=docs --destination=static
 ```
 
-## Running on IIS
+## 在IIS上运行
+   
+如果你已经建立了一个本地或远程的IIS网站，你可能需要一个`web.config`来：
 
-If you have set up a local or remote IIS web site, you may need a `web.config` with:
+* 重写配置，用于处理干净的URL。
+* 如果使用自定义主题，则使用较少文件的MIME类型处理程序。
 
-* A rewrite configuration, for handling clean urls.
-* A mime type handler for less files, if using a custom theme.
+### 简洁的 URL
 
-### Clean URLs
-
-The `web.config` needs an entry for `<rewrite>` under `<system.webServer>`:
+`web.config`需要`<system.webServer>`下的<rewrite>条目：
 
 ```xml
 <configuration>
@@ -218,31 +223,31 @@ The `web.config` needs an entry for `<rewrite>` under `<system.webServer>`:
 </configuration>
 ```
 
-To use clean URLs on IIS 6, you will need to use a custom URL rewrite module, such as [URL Rewriter](http://urlrewriter.net/).
+要在IIS 6上使用干净的URL，您需要使用自定义URL重写模块，例如[URL Rewriter]（http://urlrewriter.net/）。
 
 ## Docker
 
-A docker configuration is also provided to run daux within a container, you can either run daux with php5 or php7.
+Docker配置还提供在容器中运行daux，您可以使用php5或php7运行daux。
 
 ```
 cd docker
 docker-compose -f docker-compose.7.yml up -d
 ```
 
-You can then point your browser to http://localhost:8086
+然后，您可以将浏览器指向 http//localhost:8086
 
-## PHP Requirements
+## PHP要求
+   
+Daux.io与PHP 5.6及更高版本兼容。
 
-Daux.io is compatible with PHP 5.6 and up.
+原因是因为我们有一些依赖（主要是Symfony和Guzzle）不再支持php 5.4。
 
-The reason is because some dependencies we have (mainly Symfony and Guzzle) do not support php 5.4 anymore.
+### 扩展
+    
+PHP需要以下扩展名：`php-mbstring`和`php-xml`。
 
-### Extensions
+如果您遇到类似`utf8_decode（）not found`的错误，这意味着您错过了`php-xml`软件包。(我们已经看到它只发生在PHP 7上）
 
-PHP Needs the following extension to work : `php-mbstring` and `php-xml`.
-
-If you encounter an error similar to `utf8_decode() not found` this means that you're missing the `php-xml` package. (We've seen it happen only on PHP 7)
-
-## Support
-
-If you need help using Daux.io, or have found a bug, please create an issue on the <a href="https://github.com/dauxio/daux.io/issues" target="_blank">GitHub repo</a>.
+## 支持
+   
+如果您需要使用Daux.io的帮助，或发现了错误，请在<a href="https://github.com/dauxio/daux.io/issues" target="_blank"> GitHub repo上创建问题</a>。
