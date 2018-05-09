@@ -14,7 +14,7 @@
 ## 功能列表
 
 * 100％移动响应
-* 兼容CommonMark ( Markdown 标准)
+* 兼容CommonMark(Markdown 标准)
 * 支持Markdown表格
 * 自动生成首页/Landing页面
 * 自动语法高亮
@@ -24,7 +24,7 @@
 * 可共享/可链接的搜索引擎友好网址
 * 建立在Bootstrap上
 * 无需编译步骤
-* Git / SVN友好
+* Git/SVN友好
 * 支持Google Analytics和Piwik Analytics
 * 可选代码浮动布局
 * 静态网站生成支持
@@ -34,11 +34,14 @@
 这是使用Daux.io的网站列表:
 
 - 使用定制主题:
+
     * [Pixolution flow](https://docs.pixolution.org)
 	* [Crafty](https://swissquote.github.io/crafty)
     * [Vulkan Tutorial](https://vulkan-tutorial.com)
     * [TrackJs](http://docs.trackjs.com)
+
 - 使用默认主题
+
     * [Daux.io](https://daux.io/)
     * [Gltn - An open-source word processor webapp](http://felkerdigitalmedia.com/gltn/docs/)
     * [Invade & Annex 3 - An Arma 3 Co-operative Mission](http://ia3.ahoyworld.co.uk/)
@@ -179,7 +182,7 @@ docker run --rm -it -w /build -v "$PWD":/build daux/daux.io daux
 有几种方法可以在本地运行文档。
 推荐的方法是运行`daux serve`，它将执行PHP的嵌入式服务器。
 
-默认情况下，服务器将运行于：<a href="http://localhost:8085" target="_blank">http//localhost8085</a>
+默认情况下，服务器将运行于：<a href="http://localhost:8085" target="_blank">http//localhost:8085</a>
 
 这实际上仅用于在编写/更新大量文档并希望在本地预览更改时使用。
 
